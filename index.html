@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="https://fonts.googleapis.com/css?family=Mali|Pacifico" rel="stylesheet">
+		<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css">
+		<title>Memotest</title>
+	</head>
+	<body>
+
+		<div id="gameBody">
+
+			<!--modal de bienvenida-->
+			<div id="modalIntro"> 
+				<h1 id="gameNameModal">Memotest</h1>
+				<div id="welcomeName">
+
+					<p> Hola <i class="em em-wave"></i>! vamos a jugar al memotest.</p>
+					<p>pero antes de empezar...</p>
+					<p> cuál es tu nombre <i class="em em-question"></i></p>
+					<input type="text" id="playerName" placeholder="decime tu nombre!">
+				</div>
+				<div id="levelsBox">
+					<p>con qué dificultad te gustaría jugar?</p>
+					<div id="buttonsBox">
+						<button id="easy" class="buttonLevel">FACIL</button>
+						<button id="medium" class="buttonLevel">INTERMEDIO</button>
+						<button id="hard" class="buttonLevel">EXPERTO</button>
+					</div>
+					</div>
+				<div id="errorBox" class="hidden">
+					<div id="errorName"> 
+					<p class="requiredName">Upss... el nombre es requerido.</p> 
+				</div>
+			</div>
+		</div>
+
+		<!--board del juego -->
+			<div id="board" class="hidden"> <!--arrancar con class hidden hasta validar nombre-->
+				<h1 id="gameNameBoard">Memotest</h1>
+				<p class="textGame">hola <span id="player"></span></p>
+				<p class="textGame">Encontrá todos los pares en menos de <span id="movesTotal"> </span>intentos</p>
+				<h2 class="textGame">Nivel:</h2>
+				<p id="level" class="textGame"></p>
+				<!-- cartas -->
+				<div class="cardTotal"> 
+					<!--carta 1-->
+						<div class="cardDiv"> 
+							<img data-id="1" id="img-1" src="img/tapada.jpg"> 
+						</div>
+					<!--carta 2-->
+						<div class="cardDiv"> 
+							<img data-id="2" id="img-2" src="img/tapada.jpg"> 
+						</div>
+					<!--carta 3-->
+						<div class="cardDiv"> 
+							<img data-id="3" id="img-3" src="img/tapada.jpg"> 
+						</div>
+					<!--carta 4-->
+						<div class="cardDiv"> 
+							<img data-id="4" id="img-4" src="img/tapada.jpg"> 
+						</div>	
+					<!--carta 5-->
+						<div class="cardDiv"> 
+							<img data-id="5" id="img-5" src="img/tapada.jpg"> 
+						</div>
+					<!--carta 6-->
+						<div class="cardDiv"> 
+							<img data-id="6" id="img-6" src="img/tapada.jpg"> 
+						</div>
+					<!--carta 7-->
+						<div class="cardDiv"> 
+							<img data-id="7" id="img-7" src="img/tapada.jpg"> 
+						</div>
+					<!--carta 8-->
+						<div class="cardDiv"> 
+							<img data-id="8" id="img-8" src="img/tapada.jpg"> 
+						</div>	
+					<!--carta 9-->
+						<div class="cardDiv"> 
+							<img data-id="9" id="img-9" src="img/tapada.jpg"> 
+						</div>
+					<!--carta 10-->
+						<div class="cardDiv"> 
+							<img data-id="10" id="img-10" src="img/tapada.jpg"> 
+						</div>
+					<!--carta 11-->
+						<div class="cardDiv"> 
+							<img data-id="11" id="img-11" src="img/tapada.jpg"> 
+						</div>
+					<!--carta 12-->
+						<div class="cardDiv"> 
+							<img data-id="12" id="img-12" src="img/tapada.jpg"> 
+						</div>	
+					</div>
+
+				<div id="movesBox"><p class="textMoves">Intentos: <span id="movesLeft">0</span></p></div>
+			</div>
+
+
+			<div id="modalWinner" class="hidden"> <!--sacar class hidden cuando termina juego-->
+<!-- modal finales -->
+				<p>Ganaste <i class="em em-tada"></i> ! con <span id="totalMoves">0 </span> intentos.</p>
+				<p>Ya podés volver a jugar</p>
+				<button class="again">Volver a jugar</button>
+				<div id="ranking">
+					<div class="column jugador"> Jugador</div>
+					<div class="column nivel"> Nivel</div>
+					<div class="column movimientos">Movimientos</div>
+				</div>
+			</div>
+							
+				<div id="modalLoser" class="hidden"> 
+					<p>Perdiste!</p>
+					<p>Querés volver a jugar?</p>
+					<button class="again">Volver a jugar</button>
+				</div>
+			</div>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,213 @@
+//resets
+body {
+	margin: 0;
+	text-decoration: none;
+	background: url('../img/fondo.jpg');
+	.hidden {
+		display: none!important; /*sino no funciona!*/
+	}
+}
+
+//mixins
+
+@mixin modal {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+	height: 600px; //ojo, ver si no se sale el upss cuando aparece!
+	background: wheat;
+	z-index: 1;
+	border: 8px solid black;
+	border-radius: 15px;
+	font-family: 'Indie Flower', cursive;
+	justify-content: center;
+
+}
+
+@mixin buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	text-decoration: none;
+	color: white;
+	background-color: darkorange;
+	border-radius: 5px;
+	border: 0px;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 2%;
+	font-family: 'Indie Flower', cursive;
+	font-size: 16px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+//scss
+//fondo de todo el juego
+#gameBody {
+	//background: url('../img/fondo.jpg');
+	position: relative;
+}
+
+//pantalla inicio
+#modalIntro {
+	@include modal();
+	#gameNameModal {
+		text-align: center; 
+		justify-content: center;
+		color: lightseagreen;
+		font-family: 'Pacifico', cursive; 
+		font-size: 40px;
+		}
+	#welcomeName {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		#playerName {
+			width: 250px;
+			height: 20px;
+			outline: none;  
+			border-color: palevioletred;
+			box-shadow: none;
+			border-style: solid;
+		}
+		#playerName:focus {
+			outline: none;  
+			border-color: purple; //chequear colores
+		}
+	}
+	#levelsBox {
+		display: flex;
+		flex-direction: column;
+		.buttonLevel {
+			@include buttons();
+		}
+		.buttonLevel:hover {
+			background-color: #EAC852;
+		}
+	}
+	#errorName {
+		width: 250px;
+		height: 50px;
+		background-color: plum;
+		.requiredName {
+			color: brown;
+			font-size: 16px;
+			text-align: center;
+		}
+	}
+}	
+//tablero
+#board {
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 60%;
+	height: 60%;
+	border: 5px solid black;
+	border-radius: 15px;
+	font-family: 'Indie Flower', cursive;
+	#gameNameBoard {
+		text-align: center; 
+		color: lightseagreen;
+		font-family: 'Pacifico', cursive;
+		font-size: 48px;
+	}
+	.textGame {
+		text-align: center;
+		#movesTotal {
+			color: lightseagreen;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		}
+	#movesBox {
+		background-color: beige;
+		border: 5px solid lightseagreen;
+		border-radius: 5px;
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+		.textMoves {
+			text-align: center;
+		}
+	}
+}
+//cards:
+.cardTotal {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	.cardDiv {
+		display: flex;
+		margin: 1%;
+		//width: 20%;
+		height: 150px;
+		img {
+		//	width: 30%;
+			height: 100%;
+			cursor: pointer;
+			border: #F9A444 2px solid;
+		}
+	}
+	.turnOn {
+		transform: rotateY(180deg);
+		transition: 0.6s;
+		transform-style: preserve-3d;
+	}
+	.foundCard {
+		filter: saturate(0);
+	}
+}
+
+//modal final perdió
+#modalLoser {
+	@include modal();
+	flex-direction: column;
+	text-align: center;
+	height: 300px;
+	.again {
+		@include buttons();
+		height: 50px;
+		width: 150px;
+		
+	}
+}
+//modal final ganó
+
+#modalWinner {
+	@include modal();
+	flex-direction: column;
+	text-align: center;
+	height: 500px;
+	.again {
+		@include buttons();
+		height: 50px;
+		width: 150px;
+	 }
+		#ranking {
+			display: flex;
+			margin: auto;
+			width: 80%;
+			border-top: 2px solid black;
+			justify-content: space-around;
+			.jugador, .nivel {
+				border-right: 2px solid black;
+			} 
+			.jugador, .nivel, .movimientos {
+				display: flex;
+				flex-direction: column;
+				font-size: 12px;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		} //ver bien como hacer bordes
+	}
+
+
