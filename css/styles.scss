@@ -4,7 +4,7 @@ body {
 	text-decoration: none;
 	background: url('../img/fondo.jpg');
 	.hidden {
-		display: none!important; /*sino no funciona!*/
+		display: none!important; 
 	}
 }
 
@@ -16,7 +16,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	width: 400px;
-	height: 600px; //ojo, ver si no se sale el upss cuando aparece!
+	height: 600px; 
 	background: wheat;
 	z-index: 1;
 	border: 8px solid black;
@@ -48,7 +48,6 @@ body {
 //scss
 //fondo de todo el juego
 #gameBody {
-	//background: url('../img/fondo.jpg');
 	position: relative;
 }
 
@@ -76,7 +75,7 @@ body {
 		}
 		#playerName:focus {
 			outline: none;  
-			border-color: purple; //chequear colores
+			border-color: purple;
 		}
 	}
 	#levelsBox {
@@ -110,7 +109,7 @@ body {
 	width: 60%;
 	height: 60%;
 	max-width: 800px;
-	min-width: 500px;
+	min-width: 500px; 
 	border: 5px solid black;
 	border-radius: 15px;
 	font-family: 'Indie Flower', cursive;
@@ -209,7 +208,7 @@ body {
 				padding-left: 20px;
 				padding-right: 20px;
 			}
-		} //ver bien como hacer bordes
+		} 
 	}
 
 
